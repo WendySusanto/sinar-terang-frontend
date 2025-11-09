@@ -3,10 +3,10 @@ import { useSideBarContext } from "../contexts/SidebarContext";
 import { useThemeContext } from "../contexts/ThemeContext";
 import { useModeContext } from "../contexts/ModeContext";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Header() {
-  const { toggle, isExpanded } = useSideBarContext();
+  const { toggle } = useSideBarContext();
   const { toggleDark, isDark } = useThemeContext();
   const { toggleAdmin, isAdminMode } = useModeContext();
   const navigate = useNavigate(); // Initialize useNavigate

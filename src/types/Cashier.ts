@@ -1,5 +1,3 @@
-import { Product } from "./Products";
-
 export type Member = {
   id: number;
   name: string;

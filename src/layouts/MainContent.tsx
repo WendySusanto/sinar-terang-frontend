@@ -14,7 +14,7 @@ import { useModeContext } from "../contexts/ModeContext";
 
 export default function MainContent() {
   const { isExpanded } = useSideBarContext();
-  const { toggleAdmin, isAdminMode } = useModeContext();
+  const { isAdminMode } = useModeContext();
   const navigate = useNavigate();
   const location = useLocation();
 

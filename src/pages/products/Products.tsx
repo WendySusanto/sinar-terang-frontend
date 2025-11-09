@@ -1,12 +1,12 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { Product, MemberPrice, GrosirConfig } from "../../types/Products";
 import { DataTable } from "../../components/DataTable";
 import { ColumnDef } from "@tanstack/react-table";
 import Button from "../../components/Button";
-import { Delete, Pencil, PlusCircle, Trash2, X } from "lucide-react";
+import { Pencil, PlusCircle, Trash2, X } from "lucide-react";
 import { Modal } from "../../components/Modal";
 import { useModal } from "../../hooks/useModal";
-import { set, z } from "zod"; // Import zod
+import { z } from "zod"; // Import zod
 import { InputField } from "../../components/InputField";
 import { AnimatedSuccessIcon } from "../../components/AnimatedSuccessIcon";
 import { LoadingIcon } from "../../components/LoadingIcon";
@@ -102,16 +102,8 @@ export default function Products() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [data, setData] = useState<Product[]>([]);
 
-  const {
-    get,
-    post,
-    patch,
-    del,
-    isError,
-    isLoading,
-    errorMessage,
-    statusCode,
-  } = useFetch<Product[]>();
+  const { get, post, patch, del, isError, isLoading, errorMessage } =
+    useFetch<Product[]>();
 
   const fetchData = async () => {
     const dataResponse = await get("/api/products", {

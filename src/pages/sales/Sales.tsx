@@ -14,8 +14,7 @@ export default function SalesPage() {
   const navigate = useNavigate(); // Initialize useNavigate
   const [data, setData] = useState<Sales[]>([]);
 
-  const { get, post, patch, del, isError, isLoading, errorMessage } =
-    useFetch<Sales[]>();
+  const { get, isError, isLoading, errorMessage } = useFetch<Sales[]>();
 
   const salesColumns: ColumnDef<Sales>[] = [
     { accessorKey: "id", header: "ID" },

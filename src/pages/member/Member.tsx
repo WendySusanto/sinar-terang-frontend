@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { DataTable } from "../../components/DataTable";
 import { ColumnDef } from "@tanstack/react-table";
 import Button from "../../components/Button";
-import { Pencil, PlusCircle, Trash2, X } from "lucide-react";
+import { Pencil, PlusCircle, Trash2 } from "lucide-react";
 import { Modal } from "../../components/Modal";
 import { useModal } from "../../hooks/useModal";
 import { z } from "zod";
@@ -57,16 +57,8 @@ export default function Members() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [data, setData] = useState<Member[]>([]);
 
-  const {
-    get,
-    post,
-    patch,
-    del,
-    isError,
-    isLoading,
-    errorMessage,
-    statusCode,
-  } = useFetch<Member[]>();
+  const { get, post, patch, del, isError, isLoading, errorMessage } =
+    useFetch<Member[]>();
 
   const fetchData = async () => {
     const response = await get("/api/members", {

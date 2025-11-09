@@ -10,13 +10,7 @@ import {
 import { rankItem } from "@tanstack/match-sorter-utils";
 import { useState } from "react";
 import Button from "./Button";
-import {
-  ChevronLeft,
-  ChevronRight,
-  LucideChevronLast,
-  Search,
-  X,
-} from "lucide-react";
+import { ChevronLeft, ChevronRight, LucideChevronLast } from "lucide-react";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
